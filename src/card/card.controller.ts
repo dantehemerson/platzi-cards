@@ -1,4 +1,10 @@
-import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Header,
+  NotFoundException,
+  Param,
+} from '@nestjs/common';
 import { UserNotFound } from 'src/platzi-api/errors/user-not-found.error';
 import { CardService } from './card.service';
 
@@ -6,6 +12,7 @@ import { CardService } from './card.service';
 export class CardController {
   constructor(private readonly cardService: CardService) {}
 
+  @Header('Content-Type', 'image/svg+xml')
   @Get('/:username')
   async generateImage(@Param('username') username: string) {
     try {

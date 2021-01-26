@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import { Element } from 'domhandler';
 import { DataScriptNotFound } from '../errors/data-script-not-found.error';
 
