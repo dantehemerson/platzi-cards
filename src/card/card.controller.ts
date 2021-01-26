@@ -1,22 +1,23 @@
-import {
-  Controller,
-  Get,
-  Header,
-  NotFoundException,
-  Param,
-} from '@nestjs/common';
-import { UserNotFound } from 'src/platzi-api/errors/user-not-found.error';
+import { Controller, Get, NotFoundException, Param, Res } from '@nestjs/common';
+import { FastifyReply } from 'fastify';
+import { UserNotFound } from '../platzi-api/errors/user-not-found.error';
 import { CardService } from './card.service';
 
 @Controller('card')
 export class CardController {
   constructor(private readonly cardService: CardService) {}
 
-  @Header('Content-Type', 'image/svg+xml')
   @Get('/:username')
-  async generateImage(@Param('username') username: string) {
+  async generateImage(
+    @Res({ passthrough: true }) res: FastifyReply,
+    @Param('username') username: string,
+  ) {
     try {
-      return await this.cardService.generateCardForUsername(username);
+      const response = await this.cardService.generateCardForUsername(username);
+
+      res.header('Content-Type', 'image/svg+xml');
+
+      return response;
     } catch (error) {
       if (error instanceof UserNotFound) {
         throw new NotFoundException(error.message);
