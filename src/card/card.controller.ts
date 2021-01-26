@@ -3,7 +3,7 @@ import { FastifyReply } from 'fastify';
 import { UserNotFound } from '../platzi-api/errors/user-not-found.error';
 import { CardService } from './card.service';
 
-@Controller('card')
+@Controller()
 export class CardController {
   constructor(private readonly cardService: CardService) {}
 
