@@ -1,1 +1,1 @@
-# Platzi-Swag microservice
+# Platzi readme stats
