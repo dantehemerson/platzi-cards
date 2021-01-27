@@ -7,7 +7,7 @@ import { CardService } from './card.service';
 export class CardController {
   constructor(private readonly cardService: CardService) {}
 
-  @Get('/:username')
+  @Get('/p/:username')
   async generateImage(
     @Res({ passthrough: true }) res: FastifyReply,
     @Param('username') username: string,

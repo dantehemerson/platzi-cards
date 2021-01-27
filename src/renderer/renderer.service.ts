@@ -19,7 +19,7 @@ export class RendererService {
         </g>
         
         <g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)">
-          <image x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice" xlink:href="${avatarBase64}"/>
+          <image x="10" y="20" width="100" height="100" preserveAspectRatio="xMidYMid slice" xlink:href="${avatarBase64}"/>
         </g>
         
         <g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)">
