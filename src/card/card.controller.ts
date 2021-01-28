@@ -22,6 +22,7 @@ export class CardController {
       if (error instanceof UserNotFound) {
         throw new NotFoundException(error.message);
       }
+      throw error;
     }
   }
 }

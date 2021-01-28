@@ -23,7 +23,6 @@ export class PlatziApiService {
       if (error?.response?.status === HttpStatus.NOT_FOUND) {
         throw new UserNotFound();
       }
-      console.log('🤫 Dante ➤ PlatziApiService ➤ fetchPage ➤ error', error);
       return null;
     }
   }
