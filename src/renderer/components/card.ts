@@ -36,8 +36,8 @@ export class Card {
 
     this.css = '';
 
-    this.paddingX = 25;
-    this.paddingY = 35;
+    this.paddingX = 10;
+    this.paddingY = 10;
     this.titlePrefixIcon = titlePrefixIcon;
   }
 
