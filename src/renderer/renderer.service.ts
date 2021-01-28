@@ -113,7 +113,7 @@ export class RendererService {
     label,
     value,
     id,
-    index,
+    // index,
     showIcons,
     shiftValuePos,
   }: {
