@@ -25,7 +25,14 @@ export class CardController {
       if (error instanceof UserNotFound) {
         throw new NotFoundException(error.message);
       }
-      throw error;
+      return {
+        message: `An error ocurred while generting card for @${username}`,
+        error: {
+          message: error?.message,
+          code: error?.code,
+          stack: error?.stack,
+        },
+      };
     }
   }
 }

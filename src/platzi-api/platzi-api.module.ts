@@ -5,7 +5,7 @@ import { SsrDataExtractor } from './providers/ssr-data-extractor.provider';
 @Module({
   imports: [
     HttpModule.register({
-      baseURL: 'https://platzi.com',
+      baseURL: process.env.POWERFUL_GENERIC_SCRAPPER,
     }),
   ],
   providers: [PlatziApiService, SsrDataExtractor],

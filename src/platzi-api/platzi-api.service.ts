@@ -11,7 +11,7 @@ export class PlatziApiService {
   ) {}
 
   async getUserData(username: string): Promise<User> {
-    const data = await this.fetchPage(`/p/${username}`);
+    const data = await this.fetchPage(`?username=${username}`);
     return this.ssrDataExtractor.extractData<User>(data);
   }
 
